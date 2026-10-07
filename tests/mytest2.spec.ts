@@ -23,6 +23,6 @@ test("Verify page URLt", async ({page})=>{
     console.log("Url: ",  url);
 
     await expect(page).toHaveURL(/automationexercise/);
-
+ 
 })
 
