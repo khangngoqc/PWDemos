@@ -19,7 +19,7 @@ test('Handle Dynamic Elements using CSS Locator', async({page})=>{
     //Loop to click the button 5 times
     for(let i =1; i<=5; i++){
         //Locate button by role and dynamic name
-        const button: Locator = page.locator('button[name="start"],button[name="stop"]');
+        const button: Locator = page.locator('button[name="start"],button[name="stop    "]');
 
         //click the button
         await button.click();
