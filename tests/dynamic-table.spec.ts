@@ -27,5 +27,15 @@ test("", async ({page}) => {
        }
     }
 
-    expect(cpuCell).toBe("2.7%");
+    //Step2: Compare it with the value in the yellow label
+    let yellowboxtext:string = await page.locator("#chrome-cpu").innerText();
+    console.log("Chrome CPU from the yellow box: ", yellowboxtext);
+
+    if(yellowboxtext.includes(cpuCell)){
+        console.log("CPU load of Chrome is equal");
+    }else{
+        console.log("CPU load of Chrome is NOT equal");
+    }
+
+    expect(yellowboxtext).toContain(cpuCell);
 })
